@@ -42,6 +42,15 @@ return [
             'password' => 'xxxxxxx',
             'callbackUrl' => 'http://yoursite.com/path/to',
         ],
+        'apsan' => [
+            'ipServer'    => 'yourWhiteIPServer',
+            'username'    => 'yourUsername',
+            'password'    => '',
+            'terminalId'  => 'yourTerminalId',
+            'redirectUri' => 'http://yoursite.com/path/to',
+            'bankApiUrl'  => 'https://pay.apsan.co/v1/',
+            'description' => 'payment using Apsan',
+        ],
         'atipay' => [
             'atipayTokenUrl' => 'https://mipg.atipay.net/v1/get-token',
             'atipayRedirectGatewayUrl' => 'https://mipg.atipay.net/v1/redirect-to-gateway',
@@ -296,6 +305,7 @@ return [
     'map' => [
         'local' => \Shetabit\Multipay\Drivers\Local\Local::class,
         'fanavacard' => \Shetabit\Multipay\Drivers\Fanavacard\Fanavacard::class,
+        'apsan' => \Shetabit\Multipay\Driver\Apsan\Apsan::class,
         'asanpardakht' => \Shetabit\Multipay\Drivers\Asanpardakht\Asanpardakht::class,
         'behpardakht' => \Shetabit\Multipay\Drivers\Behpardakht\Behpardakht::class,
         'digipay' => \Shetabit\Multipay\Drivers\Digipay\Digipay::class,
