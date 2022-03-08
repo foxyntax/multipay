@@ -117,7 +117,6 @@ class Apsan extends Driver
     protected function callApi($method, $route, $data = []): void
     {
         $client = new Client();
-
         $response = $client->request($method, $this->settings->bankApiUrl . $route, [
             "json" => $data,
             "headers" => [
@@ -143,7 +142,7 @@ class Apsan extends Driver
             'token' => $this->invoice->getTransactionId()
         ]);
         
-        return $this->httpCodeTranslator($response->status_code, true);
+        return $this->httpCodeTranslator($this->response->status_code, true);
     }
 
     /**
@@ -160,7 +159,7 @@ class Apsan extends Driver
             'resNum'                => ''
         ]);
 
-        return $this->httpCodeTranslator($response->status_code, true);
+        return $this->httpCodeTranslator($this->response->status_code, true);
     }
 
     /**
@@ -178,7 +177,7 @@ class Apsan extends Driver
             'resNum'    => ''
         ]);
 
-        return $this->httpCodeTranslator($response->status_code, true);
+        return $this->httpCodeTranslator($this->response->status_code, true);
     }
 
     /**
